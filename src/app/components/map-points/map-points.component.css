@@ -1,0 +1,14 @@
+.app-map-points{
+    width: 100%;
+    height: 100%;
+    float: left;
+}
+
+.card-event{
+    margin: 10px;
+    border: solid 1px gray;
+    border-radius: 5px;
+    border-style: dashed;
+    height: 50px;
+    cursor: pointer;
+}

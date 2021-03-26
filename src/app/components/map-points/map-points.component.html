@@ -1,0 +1,47 @@
+<div class="app-map-points">
+    <div *ngIf="points.length > 0">
+        <div *ngFor="let point of points; let i = index">
+
+            <mat-form-field style="width: 100%;">
+                <mat-label> + Add new event</mat-label>
+                <mat-select>
+                    <mat-option *ngFor="let type of typePoints"  (click)="CreateNewEvent(type)"[value]="type.code">
+                        {{type.viewValue}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <div>
+                <div *ngIf=" point.type == 'car-rental'">
+                    <span>
+                        <app-vehicle [point]="point" [index]="i" ></app-vehicle>
+                    </span>
+                </div>
+
+                <div *ngIf=" point.type == 'place'">
+                    <span>
+                        <app-place [point]="point" [index]="i" ></app-place>
+                    </span>
+                </div>
+
+                <div *ngIf="point.type == 'hotel'" >
+                    <span>
+                        <app-hotel [point]="point" [index]="i"></app-hotel>
+                    </span>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <div *ngIf="points.length<=0">
+        <mat-form-field style="width: 100%;">
+            <mat-label> + Add new event</mat-label>
+            <mat-select>
+                <mat-option *ngFor="let type of typePoints"  (click)="CreateNewEvent(type)" [value]="type.code">
+                    {{type.viewValue}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+    </div>
+</div>

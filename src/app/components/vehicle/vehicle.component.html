@@ -1,0 +1,64 @@
+<mat-card>
+    <div class="part" fxflex="" fxlayout="">
+        <div class="first_part" fxflex="30" >
+            <img class="imgCard" src="assets/images/car.jpg">
+        </div>
+        <div class="second_part" fxflex="50" >
+            <div>
+                <div>
+                    <span class="title">
+                        {{point.title}}
+                    </span>
+                    <span>
+                        или похожий
+                    </span>
+                </div>
+                <div>
+                    <span>
+                       Аренда автомобиля
+                    </span>
+                    <span>
+                        {{point.vehicle.type}}
+                    </span>
+                    <span>
+                        {{point.vehicle.gearbox}}
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="third_part" fxflex="20" >
+            <div>
+                <div>
+                    <button mat-stroked-button color="primary" (click)="change()" >
+                        <span   [ngStyle.xs]="{'display':'none'}" 
+                                [ngStyle.sm]="{'display':'none'}" 
+                                [ngStyle.md]="{'display':'block'}" 
+                                [ngStyle.lg]="{'display':'block'}" 
+                                [ngStyle.xl]="{'display':'block'}">Change</span>
+                        
+                        <span class="material-icons icon" [ngStyle.xs]="{'display':'block'}" 
+                                    [ngStyle.sm]="{'display':'block'}" 
+                                    [ngStyle.md]="{'display':'none'}" 
+                                    [ngStyle.lg]="{'display':'none'}" 
+                                    [ngStyle.xl]="{'display':'none'}">edit</span>
+                            </button>
+                </div>
+                <div>
+                    <button mat-stroked-button color="warn" (click)="delete()">
+                        <span   [ngStyle.xs]="{'display':'none'}" 
+                                [ngStyle.sm]="{'display':'none'}" 
+                                [ngStyle.md]="{'display':'block'}" 
+                                [ngStyle.lg]="{'display':'block'}" 
+                                [ngStyle.xl]="{'display':'block'}">Delete</span>
+                        <span class="material-icons icon" [ngStyle.xs]="{'display':'block'}" 
+                                [ngStyle.sm]="{'display':'block'}" 
+                                [ngStyle.md]="{'display':'none'}" 
+                                [ngStyle.lg]="{'display':'none'}" 
+                                [ngStyle.xl]="{'display':'none'}">delete</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</mat-card>
+<app-edite-card  (openChangeEvent)="onOpenChangeEvent($event)" *ngIf="openChange" [point] ="point" [index]="index"></app-edite-card>

@@ -1,0 +1,27 @@
+app-map-points{
+    width: 60%;
+    max-width: 800px;
+    float: left;
+    margin-left: 20px;
+    /* margin-right: 20px; */
+
+    height: 100vh;
+    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+app-map{
+    float: left;
+    width: 40%;
+}
+
+@media only screen and (max-width: 900px){
+    app-map-points{
+        width: 100%;
+        margin: 0px;
+    }  
+
+    app-map{
+        display: none;
+    }
+}

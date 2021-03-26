@@ -1,0 +1,80 @@
+<mat-card>
+    <div class="part" fxflex="" fxlayout="">
+        <div class="first_element_part" fxflex="40" >
+            <div>
+                <div class="title_part">
+                    <span>Start time</span>
+                </div>
+                <div>
+                    <span>Event start time </span>
+                </div>
+                <div class="div_input_time">   
+                    <button class="btn-timer" (click)="decrement()" >
+                        <span class="material-icons icon" >remove</span>
+                    </button>
+                   
+                    <input  class="input_time" matInput  value=" {{point.st |  date: 'HH:mm'}}">
+
+                    <button class="btn-timer" (click)="increment()" >
+                        <span class="material-icons icon" >add</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div  class="first_element_part" fxflex="40">
+            <div> 
+                <div class="title_part">
+                    <span>Duration </span>
+                </div>
+                <div>
+                    <span>Choose duration</span>
+                </div>
+                <div class="div_input_time">   
+                    <button class="btn-timer" (click)="decrementDuration()" >
+                        <span class="material-icons icon" >remove</span>
+                    </button>
+                   
+                    <input  class="input_time" matInput value="00:00">
+
+                    <button class="btn-timer" (click)="incrementDuration()" >
+                        <span class="material-icons icon" >add</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="second_element_part" fxflex="20" >
+            <div>
+                <div>
+                    <button mat-raised-button color="primary" (click)="saveEdite()">
+                        <span   [ngStyle.xs]="{'display':'none'}" 
+                                [ngStyle.sm]="{'display':'none'}" 
+                                [ngStyle.md]="{'display':'block'}" 
+                                [ngStyle.lg]="{'display':'block'}" 
+                                [ngStyle.xl]="{'display':'block'}">Save</span>
+                    
+                        <span class="material-icons icon" [ngStyle.xs]="{'display':'block'}" 
+                                [ngStyle.sm]="{'display':'block'}" 
+                                [ngStyle.md]="{'display':'none'}" 
+                                [ngStyle.lg]="{'display':'none'}" 
+                                [ngStyle.xl]="{'display':'none'}">save</span>
+                    </button>
+                </div>
+                <div>
+                    <button mat-stroked-button color="warn"  (click)="closeEdite()">
+                        <span   [ngStyle.xs]="{'display':'none'}" 
+                                [ngStyle.sm]="{'display':'none'}" 
+                                [ngStyle.md]="{'display':'block'}" 
+                                [ngStyle.lg]="{'display':'block'}" 
+                                [ngStyle.xl]="{'display':'block'}">Cancel</span>
+                
+                    <span class="material-icons icon" [ngStyle.xs]="{'display':'block'}" 
+                                [ngStyle.sm]="{'display':'block'}" 
+                                [ngStyle.md]="{'display':'none'}" 
+                                [ngStyle.lg]="{'display':'none'}" 
+                                [ngStyle.xl]="{'display':'none'}">cancel</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</mat-card>
